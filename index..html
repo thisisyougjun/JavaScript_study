@@ -6,14 +6,24 @@
 
 </head>
 <body>
-<body style="background-color: black" text="white">
 <input type="button" value="night" onclick="document.querySelector('body').style.backgroundColor='black'">
 <input type="button" value="day" onclick="document.querySelector('body').style.backgroundColor='white'">
 
-<h1>이것은 테스트 테스트 테스트 테스트</h1>
-<script>
-    document.write(1<2);
-</script>
+<h1>이것은 다크모드</h1>
+
+<input id="night_day" type="button" value="night" onclick="
+    if (document.querySelector('#night_day').value ==='night'){ <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    document.querySelector('#night_day').value ='day';
+    }else{ <!-- value값이 night아니라면 원래로 돌아감 -->
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        document.querySelector('#night_day').value ='night';
+    }"
+    style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
+>
+>
 </body>
 
 </body>
