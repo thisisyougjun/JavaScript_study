@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 <input type="button" value="night" onclick="document.querySelector('body').style.backgroundColor='black'">
@@ -58,7 +58,18 @@
     bread.push('push');
     document.write(bread);
 </script>
-</body>
 
+<h1>Loop&Array</h1>
+</body>
+    <ul>
+        <script>
+            var i =0;
+            var test=["test1","test2","test3"];
+            while (i <test.length){
+                document.write('<li><a href="http://naver.com/'+ test[i]+'">'+test[i]+'</a></li>');
+                i=i+1;
+            }
+        </script>
+    </ul>
 </body>
 </html>
