@@ -12,18 +12,52 @@
 <h1>이것은 다크모드</h1>
 
 <input id="night_day" type="button" value="night" onclick="
-    if (document.querySelector('#night_day').value ==='night'){ <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
+    if (this.value==='night'){ <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
     document.querySelector('body').style.backgroundColor='black';
     document.querySelector('body').style.color='white';
-    document.querySelector('#night_day').value ='day';
+    this.value='day';
     }else{ <!-- value값이 night아니라면 원래로 돌아감 -->
         document.querySelector('body').style.backgroundColor='white';
         document.querySelector('body').style.color='black';
-        document.querySelector('#night_day').value ='night';
+        this.value='night';
     }"
     style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
 >
+<input id="night_day2" type="button" value="night" onclick="
+    var target =document.querySelector('body'); <!--중복 제거 target 안에 들어감
+    -->
+    if (this.value==='night'){ <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
+    target.style.backgroundColor='black';
+    target.style.color='white';
+    this.value='day';
+    }else{ <!-- value값이 night아니라면 원래로 돌아감 -->
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        this.value='night';
+    }"
+       style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
+>
 
+<h1>Array (배열)</h1>
+<h2>Syntax</h2>
+<script>
+    var bread = ["egoing", "leezche"];
+</script>
+<h2>get</h2>
+<script>
+    document.write(bread[0]);
+
+</script>
+<br>
+<h2>length</h2>
+<script>
+    document.write(bread.length);
+</script>
+<h2>add</h2>
+<script>
+    bread.push('push');
+    document.write(bread);
+</script>
 </body>
 
 </body>
