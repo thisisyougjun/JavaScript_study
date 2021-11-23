@@ -23,20 +23,7 @@
     }"
     style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
 >
-<input id="night_day2" type="button" value="night" onclick="
-    var target =document.querySelector('body'); <!--중복 제거 target 안에 들어감
-    -->
-    if (this.value==='night'){ <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
-    target.style.backgroundColor='black';
-    target.style.color='white';
-    this.value='day';
-    }else{ <!-- value값이 night아니라면 원래로 돌아감 -->
-        target.style.backgroundColor='white';
-        target.style.color='black';
-        this.value='night';
-    }"
-       style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
->
+
 
 <h1>Array (배열)</h1>
 <h2>Syntax</h2>
@@ -71,5 +58,30 @@
             }
         </script>
     </ul>
+<h1>Function</h1>
+<ul>
+    <script>
+        //함수
+        function two(){
+         document.write('<li>2-1</li>');
+         document.write('<li>2-1</li>');
+        }
+        two();
+        //함수 파라미터
+        function sum(a,b){
+            document.write(a+b+'<br>');
+        }
+        sum(1,2);//아규먼트
+        sum(2,3);
+    </script>
+
+    <h2>Return</h2>
+    <script>
+        function sum(a,b){
+            return a+b;
+        }
+        document.write('<div style="font-size: 3rem; color: red">'+sum(1,2)+'</div>')
+    </script>
+</ul>
 </body>
 </html>
