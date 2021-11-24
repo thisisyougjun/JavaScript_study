@@ -11,19 +11,44 @@
 
 <h1>이것은 다크모드</h1>
 
-<input id="night_day" type="button" value="night" onclick="
-    if (this.value==='night'){ <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
-    document.querySelector('body').style.backgroundColor='black';
-    document.querySelector('body').style.color='white';
-    this.value='day';
-    }else{ <!-- value값이 night아니라면 원래로 돌아감 -->
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black';
-        this.value='night';
-    }"
-    style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
+<input id="night_day" type="button" value="night"
+       style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
+       onclick="nightDayHandler(this)"
 >
+<script>
 
+    function nightDayHandler(test) {
+        var target = document.querySelector('body');
+        if (test.value === 'night') { <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
+            BodySetBackgroundColor('black');
+            BodySetColor('white');
+            test.value = 'day';
+            LinksSetColor('powderblue');
+
+        } else { <!-- value값이 night아니라면 원래로 돌아감 -->
+            BodySetBackgroundColor('white');
+            BodySetColor('black');
+            test.value = 'night';
+            LinksSetColor('blue');
+        }
+
+    }
+    function LinksSetColor(color) {
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (1 < alist.length) {
+            alist[i].style.color = 'color';
+            i = i + 1;
+        }
+    }
+    function BodySetColor(color){
+        document.querySelector('body').style.color=color;
+    }
+
+    function BodySetBackgroundColor(color){
+        document.querySelector('body').style.backgroundColor=color;
+    }
+</script>
 
 <h1>Array (배열)</h1>
 <h2>Syntax</h2>
