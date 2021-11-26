@@ -28,6 +28,21 @@
     for (var key in cowokers){
         document.write(key+' : ' + cowokers[key]+'<br>');
     }
+    for (var key in cowokers){
+        document.write(cowokers[key]+'<br>');
+    }
+</script>
+
+<h2>Property & Method</h2>
+<h3>객체에 소속되는 함수</h3>
+<h5>객체에 포함되는 변수는 프로퍼티라고 부름</h5>
+<script>
+    cowokers.showAll = function (){
+        for (var key in this){
+            document.write(key+' : ' + cowokers[key]+'<br>');
+        }
+    }
+    cowokers.showAll();
 </script>
 </body>
 </html>
