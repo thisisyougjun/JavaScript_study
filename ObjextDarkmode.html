@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="night_day" type="button" value="night"
+       style="width: 100px; height: 100px; font-size: 30px; font-weight: bold"
+       onclick="nightDayHandler(this)"
+>
+<script>
+//링크 객체
+    var Links={
+        SetColor:function (){
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while (1 < alist.length) {
+                alist[i].style.color = 'color';
+                i = i + 1;
+            }
+        }
+    }
+//Body 객체
+    var Body ={
+        setColor:function (color){
+            document.querySelector('body').style.color=color;
+        },
+        SetBackgroundColor:function (color){
+            document.querySelector('body').style.backgroundColor=color;
+        }
+    }
+
+    function nightDayHandler(test) {
+        var target = document.querySelector('body');
+        if (test.value === 'night') { <!-- 만약 value 값이 night 라면 다크모드가 되고 value값을 day로 바꾼다 -->
+            Body.SetBackgroundColor('black');
+            Body.setColor('white');
+            test.value = 'day';
+            Links.SetColor('blue');
+
+        } else { <!-- value값이 night아니라면 원래로 돌아감 -->
+            Body.SetBackgroundColor('white');
+            Body.setColor('black');
+            test.value = 'night';
+            Links.SetColor('blue');
+        }
+
+    }
+</script>
+</body>
+</html>
