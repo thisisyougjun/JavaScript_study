@@ -19,11 +19,11 @@
     <script>
         cowokers.bookkeeper="duru";
         document.write("bookkeeper : "+cowokers.bookkeeper +"<br>");
-        cowokers["data scientist"] ="taeho"; //데이터에 빈값이 들어가면 안되기 때문에 대괄호를 사용함 []
-        document.write("data scientist : "+cowokers["data scientist"] +"<br>"); 출력할때도 똑같이 대괄호 사용
+        cowokers["data scientist"] ="taeho"; //이름에 공백이 들어가면 안되기 때문에 대괄호를 사용함 []
+        document.write("data scientist : "+cowokers["data scientist"] +"<br>"); //출력할때도 똑같이 대괄호 사용
     </script>
 
-    <h2>Iterate</h2>
+    <h2> </h2>
 <script>
     for (var key in cowokers){
         document.write(key+' : ' + cowokers[key]+'<br>');
