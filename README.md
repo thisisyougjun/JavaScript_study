@@ -1,4 +1,4 @@
-# JavaScript 배운것들
+# JavaScript 배운것 정리
 
 ## Object(객체)
 ### 객체 생성
