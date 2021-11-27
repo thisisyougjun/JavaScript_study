@@ -1,6 +1,6 @@
 # JavaScript 배운것들
 
-##Object(객체)
+## Object(객체)
 ### 객체 생성
 ```javascript
 var cowokers ={
@@ -22,7 +22,7 @@ document.write("Back End : "+cowokers["Back End"])
 ```
 **출력 할때도 대괄호를 사용해야함**
 
-###데이터 추가
+### 데이터 추가
 ```javascript
 cowokers.Frontend="Youngjun";
 ```
