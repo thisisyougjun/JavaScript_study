@@ -1,7 +1,7 @@
 # JavaScript 배운것들
 
 ##Object(객체)
-###객체 생성
+### 객체 생성
 ```javascript
 var cowokers ={
     "programmer":"Youngjun",
@@ -9,7 +9,7 @@ var cowokers ={
 };
 ```
 
-###객체 출력
+### 객체 출력
 
 ```javascript
 document.write("programmer :" +cowokers.programmer);
@@ -27,7 +27,7 @@ document.write("Back End : "+cowokers["Back End"])
 cowokers.Frontend="Youngjun";
 ```
 
-###객체 반복문
+### 객체 반복문
 ```javascript
 for (var key in cowokers){
     document.write(key+':' + cowokers[key]);
@@ -36,7 +36,7 @@ for (var key in cowokers){
 ```
 순서대로 모두 출력된다
 
-###Property & Method
+### Property & Method
 ```javascript
 cowokers.showAll = function (){
     for (var key in this){
@@ -51,7 +51,7 @@ cowokers.showAll();
 
 ***
 ## Array (배열)
-###배열 생성
+### 배열 생성
 ```javascript 
  var bread = ["Young", "Jun"];
 ```
@@ -65,14 +65,14 @@ document.write(bread[0]);
 배열은 순서대로 0,1,2... 시작 되기때문에
 인덱스 값을 0을 넣으면 Young 출력된다
 
-###배열 길이 
+### 배열 길이 
 
 ```javascript
 bread.length
 ```
 배열의 길이를 알수있다
 
-###배열 추가, 삭제
+### 배열 추가, 삭제
 
 ```javascript
 bread.push('LEE')
@@ -83,7 +83,7 @@ bread.push('LEE')
 bread.pop()
 ```
 배열의 마지막에 있는 데이터를 삭제한다
-###배열 활용
+### 배열 활용
 
 반복문을 추가해 활용해보면
 
@@ -99,7 +99,7 @@ while (i<bread){
 ***
 ##Function (함수)
 
-###함수 생성
+### 함수 생성
 ```javascript
    function two(){
          document.write('<li>2-1</li>');
@@ -107,13 +107,13 @@ while (i<bread){
         }
 ```
 
-###함수 호출
+### 함수 호출
 ```javascript
 two();
 ```
 함수이름과 괄호면 함수 호출하고 함수 안에있는 코드를 실행한다
 
-###함수 파라미터
+### 함수 파라미터
 ```javascript
     function sum(a,b){
             document.write(a+b);
@@ -121,7 +121,7 @@ two();
 ```
 이때 sum(a,b) a,b는 매개변수라고 한다
 
-###함수 파라미터 호출
+### 함수 파라미터 호출
 ```javascript
 sum(1,2);
 ```
