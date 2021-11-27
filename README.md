@@ -32,9 +32,9 @@ cowokers.Frontend="Youngjun";
 for (var key in cowokers){
     document.write(key+':' + cowokers[key]);
 }
-![캡처](https://user-images.githubusercontent.com/75524611/143687065-5856a136-b53e-45b6-8f6a-d483b24bfa14.PNG)
 
 ```
+![캡처](https://user-images.githubusercontent.com/75524611/143687065-5856a136-b53e-45b6-8f6a-d483b24bfa14.PNG)
 순서대로 모두 출력된다
 
 ### Property & Method
