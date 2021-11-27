@@ -32,7 +32,8 @@ cowokers.Frontend="Youngjun";
 for (var key in cowokers){
     document.write(key+':' + cowokers[key]);
 }
-![]![캡처](https://user-images.githubusercontent.com/75524611/143687009-3ea692ad-9449-44fa-b099-8dacc66cc9bc.PNG)
+![캡처](https://user-images.githubusercontent.com/75524611/143687065-5856a136-b53e-45b6-8f6a-d483b24bfa14.PNG)
+
 ```
 순서대로 모두 출력된다
 
@@ -94,7 +95,8 @@ while (i<bread){
  }
 ```
 
-![]![캡처](https://user-images.githubusercontent.com/75524611/143687009-3ea692ad-9449-44fa-b099-8dacc66cc9bc.PNG)
+![캡처](https://user-images.githubusercontent.com/75524611/143687037-654f7a59-5876-4522-943f-aa97196393ec.PNG)
+
 서로 다른 이름이 다른 링크가 출력 되는걸 볼수가 있다
 ***
 ##Function (함수)
