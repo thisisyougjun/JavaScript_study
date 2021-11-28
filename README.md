@@ -1,5 +1,28 @@
 # JavaScript 배운것들
 
+##변수
+`let`
+
+`var`<br>
+1. 한번 선언된 변수를 다시 사용할수 있다<br>
+2. 선언되기전에 사용할수 있다<br>
+3. 호이스팅 된다<br>
+
+`const`
+**선언+초기화+할당** 동시한다
+
+**함수 스코프**<br>
+- `var` <br>
+함수내에서만 선언된 변수만 그 지역변수가 된다
+
+**블록 스코프**<br>
+- `let`
+- `const`
+- 함수,`if`, `for`, `while`, `try/catch`등
+
+코드블럭안에서 선언된 변수는 코드블럭에서만 사용할수 있다<br>
+즉 지역변수다
+
 ## Object(객체)
 ### 객체 생성
 ```javascript
@@ -15,12 +38,11 @@ var cowokers ={
 document.write("programmer :" +cowokers.programmer);
 document.write("designer :" +cowokers.designer);
 ```
-**객체 이름에는 공백이 들어가면 문법적 오류 나기때문에 괄호를 사용해줘야한다**
+
 ```javascript
-cowokers["Back End"] = "Layone"
-document.write("Back End : "+cowokers["Back End"])
+cowokers["Back End"] = "Layone" //객체 이름에는 공백이 들어가면 문법적 오류 나기때문에 괄호를 사용해줘야한다
+document.write("Back End : "+cowokers["Back End"]) //출력 할때도 대괄호를 사용해야함
 ```
-**출력 할때도 대괄호를 사용해야함**
 
 ### 데이터 추가
 ```javascript
@@ -35,7 +57,8 @@ for (var key in cowokers){
 
 ```
 ![캡처](https://user-images.githubusercontent.com/75524611/143687065-5856a136-b53e-45b6-8f6a-d483b24bfa14.PNG)
-순서대로 모두 출력된다
+<br>
+순서대로 출력되는걸 확인 할수있다
 
 ### Property & Method
 ```javascript
@@ -47,8 +70,28 @@ cowokers.showAll = function (){
 cowokers.showAll();
 
 ```
-**객체 안에 소속되는 함수는 Method 부르고**
-**객체 안에 소속되는 변수는 Property 불린다**
+**객체 안에 소속되는 함수는 Method**<br>
+
+**객체 안에 소속되는 변수는 Property**
+
+###생성자
+```javascript
+    function Item(title,price){
+    this.title =title;
+    this.price =price;
+    this.showPrice = function (){
+        document.write(`가격은 ${price}원 입니다`);
+    }
+}
+
+const item1 = new Item("PC",40000); //this에 item1들어감
+const item2 = new Item("마우스",20000);//this에 item2들어감
+const item3 = new Item("키보드",30000);//this에 item3들어감
+
+console.log(item1,item2,item3);
+
+item3.showPrice();
+```
 
 ***
 ## Array (배열)
@@ -113,7 +156,6 @@ while (i<bread){
 ```javascript
 two();
 ```
-함수이름과 괄호면 함수 호출하고 함수 안에있는 코드를 실행한다
 
 ### 함수 파라미터
 ```javascript
