@@ -73,6 +73,46 @@ cowokers.showAll();
 **객체 안에 소속되는 함수는 Method**<br>
 
 **객체 안에 소속되는 변수는 Property**
+####coupeted property(계산된 프로퍼티)
+```javascript
+const a='age';
+
+const user ={
+    name : 'Mike',
+    [a] :30
+}
+```
+
+```javascript
+const user = {
+    [1 + 4] : 5,
+    ["안녕"+"하세요"] : "Hello"
+}
+```
+>5 : 5,안녕하세요:"Hello"
+
+####Object methods
+```javascript
+console.log(Object.keys(user));     //키 배열 반환
+console.log(Object.values(user));   //값 배열 반환
+console.log(Object.entries(user));  //키/값 배열 변환
+
+const obj =makeObj("성별","male")
+
+let arr = [
+    ["mom","월"], //배열 안에 배열
+    ["tue","화"]
+];
+
+const result =Object.fromEntries(arr); //키/값 배열을 객체로
+```
+```javascript
+const user={
+    name : 'test',
+    age :'18'
+};
+```
+>~~모르는 나를 위해서~~ `key`는 name,age `값` test, 18 이다
 
 ###생성자
 ```javascript
@@ -189,3 +229,40 @@ console.log(window.name, window.age); // Covy 20
 const tony = new Programmer('Tony', 25);
 console.log(tony.name, tony.age); // Tony 25 - this가 해당 객체에 바인딩됨
 ```
+
+****
+##Symbol
+>변경이 불가능한 원시 타입의 값이며, 유일성을 보장한다, 고유한 식별자를 의미한다
+```javascript
+const test1 =Symbol("test")
+const test2 =Symbol("test")
+
+test1 === test2
+// -> false
+```
+값이 같아도 `false` 출력된다
+
+```javascript
+const id =Symbol('id');
+const user={
+    name:"Mike",
+    age : 30,
+    [id]:'myid'
+};
+console.log(Object.keys(user));
+// -> [ 'name', 'age' ]
+```
+`Object.keys(user)`
+`Object.values(user)`
+`Object.entries(user)`
+`for(let a in user){}`<br>
+사용하면 `symbol`은 건너뛴다.
+
+```javascript
+Object.getOwnPropertySymbols(user)
+// ->[Symbol(id)] Symbol값만 볼수있다
+Reflect.ownKeys(user);
+// ->["name","age",Symbol(id)] Symbol을 포함해서 볼수있다
+```
+
+>symbol.for 도 있지만 추후에 다루고 싶다
