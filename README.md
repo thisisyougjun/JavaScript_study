@@ -1,6 +1,6 @@
 # JavaScript 배운것 정리
 
-##변수
+## 변수
 `let`
 
 `var`<br>
@@ -73,7 +73,7 @@ cowokers.showAll();
 **객체 안에 소속되는 함수는 Method**<br>
 
 **객체 안에 소속되는 변수는 Property**
-####coupeted property(계산된 프로퍼티)
+#### coupeted property(계산된 프로퍼티)
 ```javascript
 const a='age';
 
@@ -91,7 +91,7 @@ const user = {
 ```
 >5 : 5,안녕하세요:"Hello"
 
-####Object methods
+#### Object methods
 ```javascript
 console.log(Object.keys(user));     //키 배열 반환
 console.log(Object.values(user));   //값 배열 반환
@@ -114,7 +114,7 @@ const user={
 ```
 >~~모르는 나를 위해서~~ `key`는 name,age `값` test, 18 이다
 
-###생성자
+### 생성자
 ```javascript
     function Item(title,price){
     this.title =title;
@@ -265,4 +265,52 @@ Reflect.ownKeys(user);
 // ->["name","age",Symbol(id)] Symbol을 포함해서 볼수있다
 ```
 
->symbol.for 도 있지만 추후에 다루고 싶다
+~~symbol.for 도 있지만 추후에 다루고 싶다~~
+***
+
+##Math Methods
+
+```javascript
+console.log(Math.ceil(5.1));
+// ->6
+// 올림
+console.log(Math.floor(5.1));
+// ->5
+//내림
+console.log(Math.round(5.6));
+// ->6
+// 반올림
+const test =3.14213123
+console.log(test.toFixed(2)); //문자로 반환됨
+// ->3.14
+//소수점 부터 원하는 자릿수만큼 짤라서 출력함
+const x =Number('x');
+console.log(+isNaN(x));
+// ->true
+// NaN 체크
+//NaN === NaN 자기 자신을 false로 출력된다
+let num = 10;
+console.log(num.toString(16));
+// -> a
+//문자열로 바꾸고 원하는 진수로 변환한다
+
+console.log(Math.floor(Math.random()*100)+1);
+// 랜덤값을 출력한다
+//0.0123 나올수 있기 때문에 최소값 1을 더한다
+
+console.log(Math.max(1,2,11,4,8));
+// -> 11
+// 최대값을 출력
+console.log(Math.min(1,2,11,4,8));
+//-> 1
+//-> 최소값을 출력
+console.log(Math.abs(-10));
+// -> 10
+// 절대값 
+console.log(Math.pow(2,10));
+// ->1024
+// a의 b 제곱 구함
+console.log(Math.sqrt(16));
+// ->4
+// 제곱근 구함
+```
