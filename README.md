@@ -183,8 +183,39 @@ while (i<bread){
 
 ![캡처](https://user-images.githubusercontent.com/75524611/143687037-654f7a59-5876-4522-943f-aa97196393ec.PNG)
 
-서로 다른 이름이 다른 링크가 출력 되는걸 볼수가 있다
+서로 다른 이름이 다른 링크가 출력 된다
+
+### 다 차원 배열
+이해를 아직 다 못했다
+```javascript
+var arr =new Array(3) //3개의 요소를 가지는 배열 생성
+
+for (var row=0; row <3; row++) {
+    arr[row] = new Array(4) //각각의 요소마다 또다시 4개의 요소를 가지는 배열 생성
+    for (var colum=0; row<4; colum++){
+        arr[row,colum]="["+row+colum+"]"; //각각의 배열 요소를 생성함
+        document.write(arr[row,colum]+" "); //각 배열 요소에 접근
+    }
+}
+```
+
+### 연관 배열
+
+```javascript
+const arr =[];
+
+arr["하나"] =1;
+arr["참"] =true;
+arr["자바스크립트"]="javascript";
+
+document.write(arr["참"]);  // 문자열을 인덱스로 배열 요소에 접근할 수 있음
+document.write(arr.length); // 연관 배열은 Array 객체가 아니므로 length 프로퍼티의 값이 0
+document.write(arr[0]);     // undefined
+
+```
+
 ***
+
 ##Function (함수)
 
 ### 함수 생성

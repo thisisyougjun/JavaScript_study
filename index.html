@@ -133,7 +133,33 @@
     console.log(item1,item2,item3);
 
     item3.showPrice();
+</script>
 
+<h2>다차원 배열</h2>
+<script>
+    var arr =new Array(3)
+
+    for (var row=0; row <3; row++) {
+        arr[row] = new Array(4)
+        for (var colum=0; row<4; colum++){
+            arr[row,colum]="["+row+colum+"]";
+            document.write(arr[row,colum]+" ");
+        }
+        document.write("<br>")
+    }
+</script>
+<h2>연관 배열</h2>
+<script>
+    const arr =[];
+    arr["테스트"]=1;
+    arr["참"] =true;
+    arr["자바스크립트"]="javascript";
+
+    document.write(arr["참"] + "<br>");		// 문자열을 인덱스로 배열 요소에 접근할 수 있음.
+    document.write(arr.length + "<br>");	// 0
+    document.write(arr[0]);
+</script>
+<script>
 
 </script>
 
