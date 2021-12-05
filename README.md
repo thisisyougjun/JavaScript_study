@@ -218,11 +218,35 @@ document.write(arr[0]);     // undefined
 
 ## Function (함수)
 
+
 #### 지역 변수
 >함수 내에서 선언된 변수, 메모리 종료시 사라진다
 
 #### 전역 변수
 >함수 외부에서 선언된 변수, 웹 페이지를 닫아야 메모리에서 사라진다
+
+### 함수 호이스팅
+
+>함수안에 선언된 모든 변수는 함수 전체에 유효한다
+```javascript
+var globalNum = 10;     // globalNum을 전역 변수로 선언함.
+
+function printNum() {
+
+    document.write("지역 변수 globalNum 선언 전의 globalNum의 값은 " + globalNum + "입니다.<br>"); 
+    //지역 변수 globalNum 선언 전의 globalNum의 값은 undefined입니다.
+
+    var globalNum = 20; // globalNum을 지역 변수로 선언함.
+
+    document.write("지역 변수 globalNum 선언 후의 globalNum의 값은 " + globalNum + "입니다.<br>");
+    
+    //지역 변수 globalNum 선언 후의 globalNum의 값은 20입니다.
+
+}
+printNum();
+```
+`함수 호이스팅` 적용이 되기 되고 함수내에서 맨위에 선언만 되고 초기화가 되지 않은 상태가 되기 때문에 undefined 값을 반환하게 된다
+>`함수 호이스팅`은 자동으로 되지만, 항상 함수 블록의 첫 부분에 변수를 선언하는것이 좋다
 
 ### 함수 생성
 ```javascript
@@ -245,15 +269,55 @@ two();
 ```
 이때 sum(a,b) a,b는 매개변수라고 한다
 
+
 ### 함수 파라미터 호출
 ```javascript
 sum(1,2);
 ```
-1과2 는 a,b에 매개변수에 전달이 되고 sum함수가 실행되면서 a+b 값을 출력된다
+1과2 인수 라고 하고 a,b에 넘겨지게 되고 sum함수가 실행되면서 a+b 값을 반환한다
 
+### arguments 객체
+```javascript
+    
+function test1(a,b){
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+}
+
+test1(1,2)//1,2
+```
+`Array(배열)`형태를 가지는 객체
+그렇다고 arguments 객체는 배열아니다 length 말고는 pop()과 같은 아무런 속성도 없다
+
+```javascript
+function addNum(){
+    var sum = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        sum +=arguments[i]
+    }
+    console.log(sum)
+}
+
+addNum(3,3,3);
+```
+### 디폴트 매개변수
+
+```javascript
+
+function test(a, b =1){
+    a * b;
+}
+
+
+console.log(test(3)); //3
+
+console.log(test(3,2)); //6
+
+```
+인수가 입력 되지 않았다면 기본값을 대신 들어간다
 ****
 
-##this
+## this
 this는 아직 제대로 이해하지 못했다
 ```javascript
 function Programmer(name, age) {
