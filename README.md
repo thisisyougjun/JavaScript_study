@@ -116,6 +116,23 @@ const user={
 };
 ```
 >~~모르는 나를 위해서~~ `key`는 name,age `값` test, 18 이다
+> 
+#### 객체의 메소드 참조
+객체 메소드 참조 할때 ()를 붙여주지 않으면 메소드 아닌 프로퍼티 그 자체를 참조 하게 된다
+```javascript
+const test = {
+    name: '영준',
+    age: '18',
+    birthday : "040625",
+    pId : "123456",
+    fullId:function() {
+        return this.birthday + this.pId;
+    }
+};
+console.log(test.fullId);//[Function: fullId]
+console.log(test.fullId());//040625123456
+
+```
 
 ### 생성자
 ```javascript
@@ -279,15 +296,17 @@ sum(1,2);
 ### arguments 객체
 ```javascript
     
-function test1(a,b){
+function test1(){
     console.log(arguments[0]);
     console.log(arguments[1]);
 }
 
 test1(1,2)//1,2
 ```
-`Array(배열)`형태를 가지는 객체
-그렇다고 arguments 객체는 배열아니다 length 말고는 pop()과 같은 아무런 속성도 없다
+`Array(배열)`형태를 가지는 객체 <br>
+그렇다고 arguments 객체는 배열아니다 length 말고는 pop()과 같은 아무런 속성도 없다<br>
+>함수의 정의보다 많은 인수가 전달되면 대입되지 못한 매개변수들은 참조 할 방법이 없게된다<br>
+이럴때 arguments 객체를 활용할수있다
 
 ```javascript
 function addNum(){
@@ -315,6 +334,19 @@ console.log(test(3,2)); //6
 
 ```
 인수가 입력 되지 않았다면 기본값을 대신 들어간다
+
+### 나머지 매개변수
+접두사(...)를 사용하여 특정 위치의 인수부터 마지막 인수 까지 한번에 저장할수 있다<br>
+배열 형태로 저장이 된다
+
+```javascript
+function test(a, ...c){
+    console.log(a);       //1
+    console.log(c.length);//5
+    console.log(c)        //[2,3,4,5,6]
+}
+test(1,2,3,4,5,6,) 
+```
 ****
 
 ## this
@@ -335,7 +367,7 @@ console.log(tony.name, tony.age); // Tony 25 - this가 해당 객체에 바인�
 ```
 
 ****
-##Symbol
+## Symbol
 >변경이 불가능한 원시 타입의 값이며, 유일성을 보장한다, 고유한 식별자를 의미한다
 ```javascript
 const test1 =Symbol("test")
