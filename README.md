@@ -27,6 +27,7 @@
 즉 지역변수다
 
 ## Object(객체)
+
 ### 객체 생성
 ```javascript
 var cowokers ={
@@ -152,6 +153,9 @@ console.log(item1,item2,item3);
 
 item3.showPrice();
 ```
+##Prototype(프로토타입)
+
+>모든 생성자 의한 생성된 모든 객체의 본질..?
 
 ***
 ## Array (배열)
