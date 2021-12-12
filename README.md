@@ -153,7 +153,30 @@ console.log(item1,item2,item3);
 
 item3.showPrice();
 ```
-##Prototype(프로토타입)
+
+### 레퍼런스
+```javascript
+function test(name,age) {
+    this.name=name;
+    this.age=age;
+    
+    var test2 = new test();
+    var test3 = new test();
+    
+   console.log(test2==test3); //false
+   
+   var test4 = test2;
+   
+   console.log(test2==test4); //true
+}
+```
+
+`프로퍼티`의 값이 똑같다 해도 절대로 같다고 말할수 없다 <br>
+
+하지만 `test4`에 `test2`를 대입한 변수는 `object reference` 라고 부르며 객체에 자체를 저장하는게 아니라 <br>
+`test4`객체의 주소를 가리키는것이다
+
+## Prototype(프로토타입)
 
 >모든 생성자 의한 생성된 모든 객체의 본질..?
 
