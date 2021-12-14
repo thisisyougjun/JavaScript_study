@@ -26,6 +26,30 @@
 코드블럭안에서 선언된 변수는 코드블럭에서만 사용할수 있다<br>
 즉 지역변수다
 
+### 전개 구문
+
+#### 배열
+```javascript
+    const arr =[1,2,3,4]
+    const arr2=[...arr,5,6,7]
+
+console.log(arr2); // 1,2,3,4,5,6,7
+```
+여기서 대해서 의문점을 가졌다
+`[arr,5,6,7]` 과 `[...arr,5,6,7]` 비슷 해보이는데 무슨 차이가 있을까? 해서 직접 코드를 실행 해봤다
+```javascript
+console.log([arr,5,6,7]) //[1,2,3,4,5,6,7]
+console.log([...arr,5,6,7])[[1,2,3,4],5,6,7]
+```
+`...`을 붙여주지 않으면 배열 그대로 출력이 되지만 `...`붙여주면 배열이 전개가 되어 연결이 된다
+
+#### 객체 
+```javascript
+const user = {name : Mike}
+const Mike = {...user, age : 30}
+
+console.log(Mike); //{ name: 'Mike', age: 30 }
+```
 ## Object(객체)
 
 ### 객체 생성
