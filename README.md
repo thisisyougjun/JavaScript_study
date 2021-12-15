@@ -314,7 +314,7 @@ function printNum() {
 }
 printNum();
 ```
-`함수 호이스팅` 적용이 되기 되고 함수내에서 맨위에 선언만 되고 초기화가 되지 않은 상태가 되기 때문에 undefined 값을 반환하게 된다
+`함수 호이스팅` 적용이 되고 함수내에서 맨위에 선언만 되고 초기화가 되지 않은 상태가 되기 때문에 undefined 값을 반환하게 된다
 >`함수 호이스팅`은 자동으로 되지만, 항상 함수 블록의 첫 부분에 변수를 선언하는것이 좋다
 
 ### 함수 생성
@@ -502,3 +502,32 @@ console.log(Math.sqrt(16));
 // ->4
 // 제곱근 구함
 ```
+
+****
+## 클로저(Closure)
+>클로저는 반환된 내부함수가 자신이 선언됐을 때의 렉시컬 환경인 스코프를 기억하여 자신이 선언 됐을 때의 환경 밖에서 호출되어도 그 환경에 접근할 수 있는 함수를 말한다
+```javascript
+    function test1(){
+    var a =1;
+    return a;
+}
+test1();
+console.log(a); //defind
+```
+함수를 호출 하고 함수 스코프 안에 있는 a를 출력하면 오류가 난다 <br>
+함수는 실행후 바로 소멸되기 때문이다
+
+```javascript
+function outter(){
+    var b ="Hello"
+    function inner(){
+        var c = "World"
+        return b+" "+c;
+    }
+    return inner();
+}
+inner =outter();
+console.log(inner);//Hello World
+
+```
+내부 함수가 외부 함수 지역변수에 접근 할 수있고, 외부 함수는 지역변수를 사용하는 내부 변수가 소멸될때 까지 소멸 되지 않는 특성을 가지고 있다
