@@ -1,6 +1,6 @@
 # JavaScript 배운것 정리
 
-## 변수
+## 변수 t
 `let` `var` `const`<br>
 `var`재선언 가능해서 중복되도 에러가 발생하지 않는다<br>
 그 반면`const` `let` 재선언이 불가능하다<br>
