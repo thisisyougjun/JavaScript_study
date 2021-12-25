@@ -10,3 +10,10 @@ for (var index in arr) {
     console.log(arr[index]());
 }
 
+var arr3 =new Array(5)
+for (let i = 0; i <5; i++) {
+    arr3 +=i;
+    }
+for (var arr3Key in arr3) {
+    console.log(arr3[arr3Key])
+}
