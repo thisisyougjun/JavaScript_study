@@ -1,14 +1,13 @@
-const a =1;
+const kim = {
+    name : "Jun",
+};
 
-function out(){
-    const a =2;
-    function inner(){
-        console.log(a)
-    }
+const Lee = {
+    name : "Ping"
+};
 
-    return inner();
-
+function logFun(){
+    console.log(this.name);
 }
-console.log(a);
-const b =out();
-console.log(b);
+
+logFun.apply(Lee);
