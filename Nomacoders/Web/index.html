@@ -11,15 +11,29 @@
     <input type="submit" value="Log in">
 </form>
 
+<h2 id ="clock">00:00</h2>
+<h1 id = "greeting" class="hidden"></h1>
 <form class="hidden" id="logout-from">
     <input type="submit" value="logout">
 </form>
+<form id="todo_form">
+    <input type="text" placeholder="Write a To Do and Press Enter" required>
+</form>
+<ul id="todo-list">
+</ul>
+<div id ="quote_title">
+<h2>오늘의 명언</h2>
+    </div>
 
-<h1 id = "greeting" class="hidden"></h1>
-<h2 id ="clock">00:00</h2>
-
+<div id="quote">
+    <span>
+    </span>
+</div>
 <script src="js/main.js"></script>
 <script src="js/clock.js"></script>
+<script src="js/quotes.js"></script>
+<script src="js/background.js"></script>
+<script src="js/todo.js"></script>
 
 </script>
 </body>

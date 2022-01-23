@@ -14,7 +14,10 @@ function onLoginBtnClick(event){
     const username = loginInput.value;
     localStorage.setItem(USERNAME_KEY,username);
     paintGreetings(username)
-    logoutFrom.classList.remove(HIDDEN_CLASSNAME);//로그아웃 hidden 클래스 제거 
+}
+
+if (localStorage.key(0) === "username"){
+    logoutFrom.classList.remove(HIDDEN_CLASSNAME);//로그아웃 hidden 클래스 제거
 }
 
 function LogoutBtnClick(event){
@@ -39,7 +42,6 @@ if (savedUsername === null){
 }else {
    paintGreetings(savedUsername);
 }
-
 
 
 
