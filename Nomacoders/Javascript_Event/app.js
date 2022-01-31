@@ -1,4 +1,4 @@
-const target =document.querySelector("div.hello:first-child h1");
+/* const target =document.querySelector("div.hello:first-child h1");
 
 
 target.addEventListener("click",write2);
@@ -38,5 +38,15 @@ target.addEventListener("mouseleave", handeLeave)
 
 window.addEventListener("resize", handleWindowResize);
 window.addEventListener("copy",handleWindowCopy);
-window.addEventListener("offline",WindowOffline);
-window.addEventListener("online",Windowonline);
+window.addEventListener("offline",WindowOffline);window.addEventListener("online",Windowonline);
+*/
+
+const h1 =document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+
+ h1.classList.toggle("clicked")
+}
+
+
+h1.addEventListener("click",handleTitleClick)
