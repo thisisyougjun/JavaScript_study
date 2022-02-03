@@ -9,6 +9,8 @@ let toDos = [];
 function deleteTodo(){
     const li=event.target.parentElement;
     li.remove();
+    toDos = toDos.filter((toDo)=>toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function saveToDos(){
@@ -17,8 +19,9 @@ function saveToDos(){
 
 function paintToDo(newTodo){
     const li = document.createElement("li")
+    li.id = newTodo.id
     const span = document.createElement("span")
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button")
     button.innerText = "❌"
     button.addEventListener("click", deleteTodo)
@@ -28,16 +31,17 @@ function paintToDo(newTodo){
 
 }
 
-function sayHello(item){
-    console.log("this is turn of",item)
-}
 
 function handleToDoSubmit(event){
     event.preventDefault();
     const newToDo = toDoInput.value;
     toDoInput.value="";
-    toDos.push(newToDo);
-    paintToDo(newToDo);
+    const newTodoObj = {
+        text:newToDo,
+        id :Date.now(),
+    };
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos()
 }
 

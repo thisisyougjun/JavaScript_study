@@ -9,7 +9,6 @@ function sayHello(){
 
 }
 
-console.log(Date())
 sayHello();
 setInterval(sayHello,1000);
 
