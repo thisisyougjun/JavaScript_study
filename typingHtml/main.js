@@ -33,3 +33,5 @@ function blink(){
 }
 
 setInterval(blink,500);//반복함수
+
+console.log()
